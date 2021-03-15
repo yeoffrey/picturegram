@@ -4,9 +4,9 @@ Other functionalities include a search engine to sort through posts, add new pos
 
 # Documentation For Each Page 
 
-index.php: Based on the bootstrap template, this page represents the home page for the site.  Uses PHP to display all the posts
+index.php: <sub>Based on the bootstrap template, this page represents the home page for the site.  Uses PHP to display all the posts
 on the site, and passes each post's info to the post.php page to display it properly. If you are logged in, it will overwrite the
-about.php page if you click on a different users post.
+about.php page if you click on a different users post.</sub>
 
 post.php: the comment section was taken from another template cited in my references called "Blog Post", just copied it into
 the file and made sure it was within the container class and looked nice. The post page takes the info that was passed from the
