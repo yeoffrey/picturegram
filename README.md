@@ -1,8 +1,4 @@
 
-The purpose of the site is to create a basic content management system (CMS) Instagram copy called Picturegram.
-Users can post photos and comment on their/other posts via a basic login system with basic account management.
-Other functionalities include a search engine to sort through posts, add new posts, and sign in system.
-
 # Documentation For Each Page 
 
 index.php: 
