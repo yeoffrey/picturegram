@@ -1,69 +1,48 @@
-# [Start Bootstrap - Clean Blog](https://startbootstrap.com/themes/clean-blog/)
+The purpose of the site is to create a basic content management system (CMS) instagram copy called picturegram.
+Users can post photos and comment on their/other posts via a basic login system with basic account management.
+Other functionalities include a search engine to sort through posts, add new posts, and sign in system.
 
-[Clean Blog](https://startbootstrap.com/themes/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
+# Documentation For Each Page 
 
-## Preview
+index.php: Based on the bootstrap template, this page represents the home page for the site.  Uses PHP to display all the posts
+on the site, and passes each post's info to the post.php page to display it properly. If you are logged in, it will overwrite the
+about.php page if you click on a different users post.
 
-[![Clean Blog Preview](https://startbootstrap.com/assets/img/screenshots/themes/clean-blog.png)](https://startbootstrap.github.io/startbootstrap-clean-blog/)
+post.php: the comment section was taken from another template cited in my references called "Blog Post", just copied it into
+the file and made sure it was within the container class and looked nice. The post page takes the info that was passed from the
+index.php file and displays it dynamically. There is a form under the post info that takes the text and time added and passes the
+data to back to post.php and handles the respective comments table and updates the page/database. Under that, php accesses all the comments
+and displays them below the post info with the most recent comments on the top. You can't post a comment if you aren't logged in, 
+if you're logged in it will post a comment with your username.
 
-**[View Live Preview](https://startbootstrap.github.io/startbootstrap-clean-blog/)**
+functions.php: created for a future assignment.
 
-## Status
+about.php: if logged in the about page will show your bio, name, and banner image. If not, the default page is just the normal about for picturegram.
+If you click on a post on index.php, the about page for that user will be shown.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-clean-blog/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-clean-blog.svg)](https://www.npmjs.com/package/startbootstrap-clean-blog)
-[![Build Status](https://travis-ci.org/StartBootstrap/startbootstrap-clean-blog.svg?branch=master)](https://travis-ci.org/StartBootstrap/startbootstrap-clean-blog)
-[![dependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog/status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog)
-[![devDependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog/dev-status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog?type=dev)
+Add post: handles the script to add a post, doesn't work if not logged in. If logged in, the post will be added to the database
+and shown on index.php. 
 
-## Download and Installation
+logout.php: simple script to logout and reset the session.
 
-To begin using this template, choose one of the following options to get started:
+login: changed the page from a contact page to a login page by renaming the fields for submition and calling into
+"login to your account". Runs a form that allows the user to login with a username and password, checks it against the DB and
+if its correct starts a session for the user as they are logged in.
 
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/themes/clean-blog/)
-* Install via npm: `npm i startbootstrap-clean-blog`
-* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-clean-blog.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-clean-blog)
+navigation.php: handles the navigation bar, and handles different data depending on whether the user is logged in or not.
 
-## Usage
+serverlogin.php: handles loging into the database and starting the connection for queries.
 
-### Basic Usage
+header.php: just starts a session.
 
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+footer.php: footer for the site, imported on every page.
 
-### Advanced Usage
+createaccount.php: form for creating an account on the site. once account is created the site will log you in and send you to
+index.php. Form does check using regex for required fields for password, and won't let you make an account until the regex is passed.
 
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+# References in APA:
+References
+Start Bootstrap. (2020, June 18). Blog Post. Retrieved from Start Bootstrap: https://startbootstrap.com/templates/blog-post/
+Start Bootstrap. (2020, June 18). Clean Blog. Retrieved from Start Bootstrap: https://startbootstrap.com/themes/clean-blog/
 
-#### Gulp Tasks
 
-* `gulp` the default task that builds everything
-* `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
-* `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-* `gulp js` minifies the themes JS file
-* `gulp vendor` copies dependencies from node_modules to the vendor directory
-
-You must have npm installed globally in order to use this build environment.
-
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-clean-blog/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/themes/clean-blog/).
-
-## About
-
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
-
-* <https://startbootstrap.com>
-* <https://twitter.com/SBootstrap>
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](https://startbootstrap.io/).
-
-* <http://davidmiller.io>
-* <https://twitter.com/davidmillerskt>
-* <https://github.com/davidtmiller>
-
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2020 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.
